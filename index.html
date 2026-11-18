@@ -3,250 +3,206 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5f0">
-  <meta name="description" content="Sena Kim — technical support, cloud operations, application engineering, and data analysis portfolio.">
-  <title>Sena Kim | Technical Support &amp; Cloud Operations</title>
+  <meta name="theme-color" content="#11122f">
+  <meta name="description" content="Sena Kim's portfolio in cloud support, software, data, and creative web work.">
+  <title>Sena Kim | Portfolio</title>
   <style>
     :root {
-      --paper: #f7f5f0;
+      --navy: #11122f;
+      --navy-2: #1b1d43;
+      --paper: #f8f7f3;
       --white: #fffefa;
-      --ink: #172c40;
-      --muted: #64717a;
-      --line: #dfe3df;
-      --coral: #db735b;
-      --sage: #dce7dd;
-      --blue: #e5edf1;
-      --lavender: #ece7f0;
-      --serif: Georgia, "Times New Roman", serif;
+      --ink: #15162f;
+      --muted: #68697a;
+      --yellow: #ffd329;
+      --line: #dddcd5;
+      --round: "Arial Rounded MT Bold", "Trebuchet MS", ui-rounded, system-ui, sans-serif;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.55; }
     a { color: inherit; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
-    .topbar { position: sticky; top: 0; z-index: 10; background: rgb(247 245 240 / 92%); backdrop-filter: blur(14px); border-bottom: 1px solid rgb(23 44 64 / 8%); }
-    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 750; letter-spacing: -.04em; }
-    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--white); background: var(--ink); font-family: var(--serif); font-size: 16px; font-weight: 400; }
-    .nav-links { display: flex; align-items: center; gap: clamp(15px, 2.5vw, 30px); }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 650; letter-spacing: .04em; transition: color .2s ease; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--coral); }
-    .nav-toggle { display: none; border: 1px solid var(--line); background: var(--white); color: var(--ink); border-radius: 99px; padding: 9px 14px; font: inherit; font-size: 13px; }
-    .hero { padding: clamp(68px, 10vw, 128px) 0 96px; overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: clamp(48px, 9vw, 116px); align-items: center; }
-    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--coral); font-size: 11px; font-weight: 750; text-transform: uppercase; letter-spacing: .16em; }
-    .eyebrow::before { content: ""; width: 27px; height: 1px; background: currentColor; }
-    h1 { margin: 22px 0 18px; max-width: 650px; font-family: var(--serif); font-size: clamp(48px, 7vw, 82px); line-height: .99; font-weight: 400; letter-spacing: -.055em; }
-    h1 em { color: var(--coral); font-weight: 400; }
-    .hero-copy { max-width: 570px; color: var(--muted); font-size: clamp(15px, 1.5vw, 18px); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 19px; border: 1px solid var(--ink); border-radius: 3px; background: var(--ink); color: white; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .035em; transition: transform .2s ease, background .2s ease; }
-    .button:hover { transform: translateY(-2px); background: #254662; }
-    .button.secondary { color: var(--ink); background: transparent; }
-    .button.secondary:hover { background: white; }
-    .arrow { font-size: 16px; line-height: 1; }
-    .hero-art { position: relative; min-height: 340px; display: grid; place-items: center; }
-    .orbit { position: absolute; border: 1px solid #cfd8d3; border-radius: 50%; transform: rotate(-18deg); }
-    .orbit.one { width: 340px; height: 235px; }
-    .orbit.two { width: 275px; height: 340px; transform: rotate(30deg); border-color: #e0c9bf; }
-    .orbit-dot { position: absolute; width: 13px; height: 13px; border-radius: 50%; background: var(--coral); top: 20%; right: 16%; box-shadow: 0 0 0 8px rgb(219 115 91 / 12%); }
-    .profile-card { position: relative; z-index: 1; width: min(300px, 80%); padding: 28px; background: var(--white); border: 1px solid #e9e5de; box-shadow: 0 24px 70px rgb(23 44 64 / 10%); transform: rotate(2deg); }
-    .profile-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
-    .profile-label { color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-    .profile-status { display: flex; align-items: center; gap: 7px; color: #4f7459; font-size: 10px; font-weight: 700; }
-    .profile-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #6b9c72; }
-    .profile-name { margin: 20px 0 2px; font-family: var(--serif); font-size: 31px; letter-spacing: -.04em; }
-    .profile-role { color: var(--muted); font-size: 12px; }
-    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 25px; }
-    .mini-stat { padding: 12px; background: var(--paper); }
-    .mini-stat strong { display: block; font-family: var(--serif); font-size: 23px; font-weight: 400; line-height: 1.1; }
-    .mini-stat span { color: var(--muted); font-size: 9px; letter-spacing: .07em; text-transform: uppercase; }
-    .scroll-note { display: inline-flex; align-items: center; gap: 10px; margin-top: 42px; color: var(--muted); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
-    .scroll-note::before { content: "↓"; display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid var(--line); border-radius: 50%; color: var(--coral); font-size: 15px; }
-    section { padding: 88px 0; }
-    .section-head { display: grid; grid-template-columns: 1fr minmax(220px, 390px); gap: 32px; align-items: end; margin-bottom: 38px; }
-    .section-kicker { margin-bottom: 9px; color: var(--coral); font-size: 10px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
-    h2 { margin: 0; font-family: var(--serif); font-size: clamp(35px, 5vw, 54px); line-height: 1.05; font-weight: 400; letter-spacing: -.045em; }
-    .section-intro { margin: 0; color: var(--muted); font-size: 14px; }
-    .about { background: var(--white); }
-    .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(44px, 9vw, 120px); align-items: start; }
-    .about-callout { padding: 27px; background: var(--sage); }
-    .about-callout p { margin: 0; font-family: var(--serif); font-size: clamp(23px, 3vw, 32px); line-height: 1.25; letter-spacing: -.025em; }
-    .about-callout small { display: block; margin-top: 24px; color: #53675b; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    .about-body p { margin: 0 0 17px; color: var(--muted); font-size: 15px; }
-    .language-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
-    .language-row span { padding: 7px 11px; border: 1px solid var(--line); border-radius: 99px; font-size: 10px; font-weight: 650; }
-    .skills { background: #eef1ee; }
-    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .skill-card { min-height: 218px; padding: 23px; background: var(--white); border: 1px solid #e4e7e2; }
-    .skill-index { color: var(--coral); font-family: var(--serif); font-size: 17px; }
-    .skill-card h3 { margin: 27px 0 13px; font-family: var(--serif); font-size: 23px; font-weight: 400; letter-spacing: -.025em; }
-    .skill-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.85; }
-    .experience { background: var(--paper); }
-    .experience-grid { display: grid; grid-template-columns: .62fr 1.38fr; gap: clamp(44px, 9vw, 112px); }
-    .experience-aside { position: sticky; top: 116px; align-self: start; }
-    .experience-aside p { max-width: 280px; color: var(--muted); font-size: 14px; }
-    .timeline { border-top: 1px solid var(--line); }
-    .job { display: grid; grid-template-columns: 132px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-    .job-date { padding-top: 4px; color: var(--coral); font-size: 11px; font-weight: 750; letter-spacing: .05em; }
-    .job h3 { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 400; }
-    .job-company { margin: 2px 0 10px; color: var(--muted); font-size: 12px; }
-    .job p { margin: 0; color: var(--muted); font-size: 13px; }
-    .projects { color: white; background: var(--ink); }
-    .projects .section-kicker { color: #f0a28c; }
-    .projects .section-intro { color: #b9c5cd; }
-    .project-list { border-top: 1px solid rgb(255 255 255 / 22%); }
-    .project { display: grid; grid-template-columns: 64px minmax(0, 1fr) 250px; gap: 24px; align-items: start; padding: 30px 0; border-bottom: 1px solid rgb(255 255 255 / 22%); }
-    .project-number { color: #f0a28c; font-family: var(--serif); font-size: 20px; }
-    .project h3 { margin: 0 0 9px; font-family: var(--serif); font-size: clamp(23px, 3vw, 31px); font-weight: 400; letter-spacing: -.03em; }
-    .project p { max-width: 620px; margin: 0; color: #c2cdd3; font-size: 13px; }
-    .project-result { padding: 15px; border: 1px solid rgb(255 255 255 / 23%); }
-    .project-result strong { display: block; color: #f7b49f; font-family: var(--serif); font-size: 25px; font-weight: 400; }
-    .project-result span { color: #c2cdd3; font-size: 10px; line-height: 1.5; }
-    .project-tools { margin-top: 15px !important; color: #f0a28c !important; font-size: 10px !important; letter-spacing: .07em; text-transform: uppercase; }
-    .education { background: var(--white); }
-    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .edu-card { padding: 23px; border: 1px solid var(--line); }
-    .edu-card span { color: var(--coral); font-size: 10px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
-    .edu-card h3 { margin: 24px 0 7px; font-family: var(--serif); font-size: 21px; font-weight: 400; }
-    .edu-card p { margin: 0; color: var(--muted); font-size: 12px; }
-    .contact { padding: 86px 0; background: var(--sage); }
-    .contact-grid { display: flex; justify-content: space-between; align-items: end; gap: 36px; }
-    .contact h2 { max-width: 580px; }
-    .contact-copy { margin: 15px 0 0; color: #586c60; font-size: 14px; }
-    footer { padding: 22px 0; background: var(--ink); color: #b9c5cd; font-size: 10px; }
-    .footer-row { display: flex; justify-content: space-between; gap: 20px; }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
-    @media (max-width: 780px) {
-      .wrap { width: min(100% - 36px, 620px); }
-      .nav { min-height: 64px; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; color: var(--white); background: var(--navy); box-shadow: 0 3px 14px #11122f22; }
+    .nav { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { color: var(--white); text-decoration: none; font: 700 15px var(--round); letter-spacing: .04em; }
+    .brand::after { content: " ✦"; color: var(--yellow); }
+    .nav-links { display: flex; align-items: center; gap: clamp(14px, 2.1vw, 27px); }
+    .nav-links a { color: var(--white); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: .02em; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--yellow); }
+    .nav-toggle { display: none; color: var(--white); background: transparent; border: 1px solid #ffffff70; border-radius: 20px; padding: 7px 12px; font: 600 12px var(--sans); }
+    .hero { padding: 58px 0 46px; background: var(--white); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr .92fr; gap: 30px; align-items: center; min-height: 440px; }
+    .hero-copy { position: relative; z-index: 1; padding: 5px 0 22px; }
+    h1 { margin: 0 0 12px; color: var(--yellow); font: 900 clamp(64px, 9vw, 112px)/.82 var(--round); letter-spacing: -.075em; text-transform: uppercase; -webkit-text-stroke: 2px var(--navy); paint-order: stroke fill; text-shadow: 3px 4px 0 var(--navy), 6px 7px 0 #11122f2b; transform: rotate(-2deg); }
+    h1 span { display: block; margin-left: .18em; }
+    .welcome { margin: 26px 0 4px; color: var(--navy); font: 900 clamp(17px, 2.2vw, 25px)/1.1 var(--round); text-transform: uppercase; letter-spacing: -.03em; }
+    .tagline { max-width: 430px; margin: 7px 0 18px; color: var(--muted); font-size: clamp(16px, 1.75vw, 19px); font-weight: 650; }
+    .tagline em { color: var(--navy); font-style: normal; text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 4px; text-underline-offset: 4px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .button { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 0 16px; border: 2px solid var(--navy); border-radius: 4px; background: var(--navy); color: var(--white); text-decoration: none; font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; transition: transform .18s ease, box-shadow .18s ease; }
+    .button:hover { transform: translateY(-2px); box-shadow: 3px 4px 0 var(--yellow); }
+    .button.secondary { background: transparent; color: var(--navy); }
+    .hero-art { position: relative; min-height: 390px; display: grid; place-items: end center; }
+    .portrait { position: relative; z-index: 1; display: block; width: min(100%, 410px); max-height: 410px; object-fit: contain; object-position: bottom; filter: drop-shadow(6px 8px 0 #11122f1c); }
+    .portrait-halo { position: absolute; width: min(76%, 320px); aspect-ratio: 1; right: 7%; top: 7%; border-radius: 50%; background: var(--yellow); }
+    .spark { position: absolute; z-index: 2; color: var(--yellow); font-size: 32px; line-height: 1; }
+    .spark.one { left: 6%; top: 18%; transform: rotate(-16deg); }
+    .spark.two { right: 8%; bottom: 21%; font-size: 24px; }
+    .language-bubbles { position: absolute; z-index: 3; right: -2%; top: 6%; display: flex; flex-direction: column; gap: 9px; align-items: flex-end; }
+    .bubble { position: relative; min-width: 94px; padding: 8px 13px; border: 2px solid var(--navy); border-radius: 50%; background: var(--white); color: var(--navy); text-align: center; font: 800 13px var(--round); box-shadow: 2px 3px 0 var(--yellow); transform: rotate(3deg); }
+    .bubble:nth-child(2) { transform: rotate(-4deg); }
+    .bubble:nth-child(3) { transform: rotate(2deg); }
+    .bubble::after { content: ""; position: absolute; right: 17px; bottom: -8px; width: 12px; height: 12px; background: var(--white); border-right: 2px solid var(--navy); border-bottom: 2px solid var(--navy); transform: rotate(35deg) skew(8deg, 8deg); }
+    section { padding: 48px 0; }
+    .section-grid { display: grid; grid-template-columns: 225px minmax(0, 1fr); gap: 32px; align-items: start; }
+    .section-title { position: relative; margin: 0; color: var(--navy); font: 900 clamp(26px, 3vw, 37px)/1 var(--round); letter-spacing: -.06em; text-transform: uppercase; }
+    .section-title::after { content: ""; display: block; width: 78px; height: 5px; margin-top: 9px; border-radius: 6px; background: var(--yellow); transform: rotate(-3deg); }
+    .section-title.light { color: var(--white); }
+    .section-content { min-width: 0; }
+    .about { background: var(--navy); color: var(--white); }
+    .about .section-grid, .skills .section-grid, .experience .section-grid, .education .section-grid { border-left: 2px solid var(--yellow); padding-left: 26px; }
+    .about-copy { max-width: 760px; margin: 0; color: #f1f0f7; font-size: 15px; }
+    .about-copy + .about-copy { margin-top: 12px; }
+    .language-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .language-chip { display: inline-flex; align-items: center; min-height: 32px; padding: 5px 12px; border: 1px solid #ffffff90; border-radius: 18px; color: var(--white); font-size: 12px; font-weight: 750; }
+    .skills { background: #efeee9; }
+    .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .skill-card { min-height: 150px; padding: 14px 13px; border: 1px solid #d5d3cd; border-radius: 6px; background: var(--white); box-shadow: 0 3px 0 #dedcd5; }
+    .skill-icon { color: var(--navy); font-size: 24px; }
+    .skill-card h3 { margin: 7px 0 6px; font: 800 14px/1.2 var(--round); }
+    .skill-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .experience { background: var(--white); }
+    .timeline { border-left: 2px solid #d9d8d2; padding-left: 18px; }
+    .job { position: relative; padding: 0 0 19px; }
+    .job:last-child { padding-bottom: 0; }
+    .job::before { content: ""; position: absolute; left: -25px; top: 5px; width: 12px; height: 12px; border: 2px solid var(--navy); border-radius: 50%; background: var(--yellow); }
+    .job-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .job h3 { margin: 0; font: 800 16px/1.25 var(--round); }
+    .job-date { color: var(--muted); font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .job-company { margin: 3px 0 5px; color: #595a6a; font-size: 12px; font-weight: 750; }
+    .job p { margin: 0; color: var(--muted); font-size: 12px; }
+    .projects { background: #efeee9; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
+    .project-card { display: flex; min-height: 144px; flex-direction: column; padding: 16px; border: 1px solid #d5d3cd; border-radius: 6px; background: var(--white); box-shadow: 0 3px 0 #dedcd5; }
+    .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .project-number { color: #a18a15; font: 800 12px var(--round); }
+    .project-card h3 { margin: 2px 0 7px; font: 800 15px/1.25 var(--round); }
+    .project-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .project-tag { margin-top: auto; padding-top: 11px; color: var(--navy); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .education { background: var(--navy); color: var(--white); }
+    .edu-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .edu-card { min-height: 128px; padding: 14px; border: 1px solid #ffffff43; border-radius: 5px; background: #ffffff0a; }
+    .edu-card span { color: var(--yellow); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .edu-card h3 { margin: 10px 0 5px; font: 800 14px/1.3 var(--round); }
+    .edu-card p { margin: 0; color: #d9d9e4; font-size: 11px; }
+    .contact { background: var(--white); }
+    .contact-content { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .contact-content p { margin: 0; color: var(--muted); font-size: 13px; }
+    .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    footer { padding: 16px 0; background: var(--navy); color: #d6d6df; font-size: 10px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 16px; }
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 34px, 650px); }
       .nav-toggle { display: inline-flex; }
-      .nav-links { display: none; position: absolute; top: 63px; left: 0; right: 0; padding: 16px 20px 20px; background: var(--paper); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+      .nav-links { display: none; position: absolute; top: 61px; left: 0; right: 0; padding: 16px 22px; background: var(--navy); border-top: 1px solid #ffffff25; flex-wrap: wrap; }
       .nav-links.open { display: flex; }
-      .nav-links a { padding: 5px 0; }
-      .hero { padding: 62px 0 70px; }
-      .hero-grid, .about-grid, .experience-grid { grid-template-columns: 1fr; }
-      .hero-grid { gap: 36px; }
-      .hero-art { min-height: 300px; }
-      .orbit.one { width: 300px; height: 210px; }
-      .orbit.two { width: 250px; height: 300px; }
-      section { padding: 68px 0; }
-      .section-head { grid-template-columns: 1fr; gap: 14px; }
-      .skill-grid, .edu-grid { grid-template-columns: 1fr 1fr; }
-      .experience-aside { position: static; }
-      .project { grid-template-columns: 38px 1fr; }
-      .project-result { grid-column: 2; }
-      .contact-grid { align-items: start; flex-direction: column; }
+      .hero { padding-top: 38px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 0; }
+      .hero-copy { padding: 8px 0 0; }
+      .hero-art { min-height: 330px; }
+      .portrait { width: min(76%, 350px); max-height: 350px; }
+      .portrait-halo { width: 250px; right: 17%; top: 3%; }
+      .language-bubbles { right: 5%; top: 4%; }
+      .section-grid { grid-template-columns: 1fr; gap: 20px; }
+      .about .section-grid, .skills .section-grid, .experience .section-grid, .education .section-grid { padding-left: 18px; }
     }
-    @media (max-width: 520px) {
-      .skill-grid, .edu-grid { grid-template-columns: 1fr; }
-      .job { grid-template-columns: 1fr; gap: 7px; }
-      .project { gap: 10px; }
-      .project-result { grid-column: 2; }
+    @media (max-width: 540px) {
+      .wrap { width: calc(100% - 28px); }
+      .nav { min-height: 58px; }
+      .nav-links { top: 57px; }
+      h1 { font-size: clamp(58px, 17vw, 84px); }
+      .welcome { margin-top: 22px; }
+      .hero-art { min-height: 290px; }
+      .portrait { width: min(82%, 310px); max-height: 300px; }
+      .portrait-halo { width: 210px; right: 14%; }
+      .bubble { min-width: 82px; padding: 7px 10px; font-size: 11px; }
+      section { padding: 37px 0; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-grid, .edu-list { grid-template-columns: 1fr; }
+      .job-head { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .contact-content { align-items: flex-start; flex-direction: column; }
       .footer-row { flex-direction: column; gap: 4px; }
     }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
   </style>
 </head>
 <body>
   <header class="topbar">
     <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Sena Kim home"><span class="brand-mark">SK</span><span>Sena Kim</span></a>
+      <a class="brand" href="#home">Sena Kim</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <div class="nav-links" id="nav-links">
         <a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#experience">EXPERIENCE</a><a href="#projects">PROJECTS</a><a href="#education">EDUCATION</a><a href="#contact">CONTACT</a>
       </div>
     </nav>
   </header>
-
   <main>
     <section class="hero" id="home">
       <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">Technical Support · Cloud Operations</div>
-          <h1>Making complex<br>technology feel <em>clear.</em></h1>
-          <p class="hero-copy">I’m Sena Kim, a technical support and application engineering professional with 12 years of experience helping teams troubleshoot systems, improve service reliability, and make work easier to repeat.</p>
-          <div class="hero-actions">
-            <a class="button" href="#projects">Explore selected work <span class="arrow" aria-hidden="true">↘</span></a>
-            <a class="button secondary" href="https://www.linkedin.com/in/seana-kim/" target="_blank" rel="noreferrer">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
-          </div>
-          <a class="scroll-note" href="#about">A little more about my work</a>
+        <div class="hero-copy">
+          <h1>Sena <span>Kim</span></h1>
+          <p class="welcome">Welcome to my portfolio</p>
+          <p class="tagline">Tired of reading résumés? <em>I gave mine a little color.</em></p>
+          <div class="hero-actions"><a class="button" href="#projects">See my work <span aria-hidden="true">↘</span></a><a class="button secondary" href="https://www.linkedin.com/in/seana-kim/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
         </div>
-        <div class="hero-art" aria-label="Profile overview">
-          <div class="orbit one"></div><div class="orbit two"></div><div class="orbit-dot"></div>
-          <div class="profile-card">
-            <div class="profile-top"><span class="profile-label">Professional snapshot</span><span class="profile-status">Open to opportunities</span></div>
-            <div class="profile-name">Sena Kim</div>
-            <div class="profile-role">Cloud Support · Systems · Applications</div>
-            <div class="mini-stats"><div class="mini-stat"><strong>12</strong><span>Years in technology</span></div><div class="mini-stat"><strong>3</strong><span>Languages</span></div></div>
-          </div>
+        <div class="hero-art" aria-label="Illustrated portrait of Sena Kim">
+          <div class="portrait-halo" aria-hidden="true"></div><span class="spark one" aria-hidden="true">✦</span><span class="spark two" aria-hidden="true">✦</span>
+          <img class="portrait" src="assets/sena-kim-illustration.png" alt="Illustration of Sena Kim wearing a navy blazer">
+          <div class="language-bubbles" aria-label="Languages: English, Japanese, and Korean"><span class="bubble">English</span><span class="bubble">日本語</span><span class="bubble">한국어</span></div>
         </div>
       </div>
     </section>
-
     <section class="about" id="about">
-      <div class="wrap">
-        <div class="section-head"><div><div class="section-kicker">01 / About</div><h2>Support that connects<br>the details.</h2></div><p class="section-intro">From application behavior to infrastructure changes, I look for the evidence that explains what is happening and communicate the next step clearly.</p></div>
-        <div class="about-grid reveal">
-          <div class="about-callout"><p>“I take ownership of a problem, follow it through, and keep the right people informed.”</p><small>How I work</small></div>
-          <div class="about-body"><p>My background spans web development, systems engineering, application engineering, and enterprise cloud support. At Akamai, I worked with customers and internal teams to investigate service issues, analyze logs, and restore reliable operation.</p><p>I also enjoy improving everyday workflows: I built an internal test application that helped shorten onboarding time, and I have continued to develop my data analysis skills through a formal program and project work.</p><p>Having lived and worked in Japan for more than a decade, I’m comfortable collaborating across Japanese and U.S. teams and communicating in English, Japanese, and Korean.</p><div class="language-row" aria-label="Languages"><span>English</span><span>日本語</span><span>한국어</span></div></div>
-        </div>
-      </div>
+      <div class="wrap section-grid"><h2 class="section-title light">About me</h2><div class="section-content"><p class="about-copy">I started out building websites and later moved into cloud support. I enjoy figuring out why something is not working, explaining what I find, and making systems and tools work better for the people who rely on them.</p><p class="about-copy">Outside of work, I have been learning data analysis and microelectronics, and I help maintain a nonprofit website.</p><div class="language-list" aria-label="Languages"><span class="language-chip">English</span><span class="language-chip">日本語</span><span class="language-chip">한국어</span></div></div></div>
     </section>
-
     <section class="skills" id="skills">
-      <div class="wrap">
-        <div class="section-head"><div><div class="section-kicker">02 / Skills</div><h2>Tools I use to<br>solve problems.</h2></div><p class="section-intro">A practical mix of customer-facing support, technical investigation, and data storytelling.</p></div>
-        <div class="skill-grid reveal">
-          <article class="skill-card"><span class="skill-index">01</span><h3>Cloud &amp; Technical Support</h3><p>Enterprise cloud support · Incident troubleshooting · Splunk log analysis · AWS EC2 operations (basic) · Docker test environments · Customer communication</p></article>
-          <article class="skill-card"><span class="skill-index">02</span><h3>Systems &amp; Applications</h3><p>Linux / CLI · Java · PHP · APIs · SQL · MySQL / Oracle · Microsoft 365 · Active Directory troubleshooting</p></article>
-          <article class="skill-card"><span class="skill-index">03</span><h3>Data &amp; Reporting</h3><p>Excel · Tableau · PostgreSQL / pgAdmin · Data cleaning · Exploratory analysis · Dashboard storytelling</p></article>
-        </div>
-      </div>
+      <div class="wrap section-grid"><h2 class="section-title">Skills</h2><div class="section-content skill-grid">
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">☁</div><h3>Cloud Support</h3><p>Customer support, service troubleshooting, log analysis, and AWS operations.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">⌘</div><h3>Application Engineering</h3><p>Web applications, APIs, Java, PHP, SQL, and Linux.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">▥</div><h3>Data Analysis</h3><p>Excel, Tableau, PostgreSQL, and communicating findings with data.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">✳</div><h3>Creative Web Work</h3><p>Website updates, forms, navigation, and practical quality checks.</p></article>
+      </div></div>
     </section>
-
     <section class="experience" id="experience">
-      <div class="wrap experience-grid">
-        <div class="experience-aside"><div class="section-kicker">03 / Experience</div><h2>Where I’ve<br>made an impact.</h2><p>Progressive experience across software, systems, applications, and cloud support.</p></div>
-        <div class="timeline reveal">
-          <article class="job"><div class="job-date">2019 — 2025</div><div><h3>Cloud Support Engineer</h3><div class="job-company">Akamai</div><p>Supported enterprise cloud services, investigated technical issues with customers and internal teams, analyzed logs with Splunk, and improved onboarding through an internal test application.</p></div></article>
-          <article class="job"><div class="job-date">2017 — 2019</div><div><h3>Application Engineer</h3><div class="job-company">Rakuten</div><p>Supported application services and applied Akamai technology for high-traffic events, helping maintain reliable customer experiences during demand spikes.</p></div></article>
-          <article class="job"><div class="job-date">2014 — 2017</div><div><h3>System Engineer</h3><div class="job-company">Cross Alliance</div><p>Worked on system operations and developed a shift management program later adopted by Recruit and MUJI.</p></div></article>
-          <article class="job"><div class="job-date">2012 — 2013</div><div><h3>Web Developer</h3><div class="job-company">Shinhwa</div><p>Built and maintained web application features using Java and related web technologies.</p></div></article>
-        </div>
-      </div>
+      <div class="wrap section-grid"><h2 class="section-title">Experience</h2><div class="section-content timeline">
+        <article class="job"><div class="job-head"><h3>Cloud Support Engineer</h3><span class="job-date">2019–2025</span></div><div class="job-company">Akamai</div><p>Worked with enterprise customers and internal teams to investigate cloud service issues, analyze logs, and restore reliable operation. Built an internal test application that shortened onboarding.</p></article>
+        <article class="job"><div class="job-head"><h3>Application Engineer</h3><span class="job-date">2017–2019</span></div><div class="job-company">Rakuten</div><p>Supported application services and helped prepare for high-traffic events, maintaining reliable service during demand spikes.</p></article>
+        <article class="job"><div class="job-head"><h3>System Engineer</h3><span class="job-date">2014–2017</span></div><div class="job-company">Cross Alliance</div><p>Worked on system operations and developed a shift management program adopted by Recruit and MUJI.</p></article>
+        <article class="job"><div class="job-head"><h3>Web Developer</h3><span class="job-date">2012–2013</span></div><div class="job-company">Shinhwa</div><p>Built and maintained web application features using Java and related web technologies.</p></article>
+      </div></div>
     </section>
-
     <section class="projects" id="projects">
-      <div class="wrap">
-        <div class="section-head"><div><div class="section-kicker">04 / Selected Work</div><h2>Evidence in the work.</h2></div><p class="section-intro">A few examples of how I troubleshoot, improve workflows, and turn data into a clear story.</p></div>
-        <div class="project-list reveal">
-          <article class="project"><div class="project-number">01</div><div><h3>Internal Test Application</h3><p>Built an internal test application that helped shorten onboarding time.</p><p class="project-tools">Akamai · Internal tool · Workflow improvement</p></div><div class="project-result"><strong>Shortened</strong><span>Onboarding time</span></div></article>
-          <article class="project"><div class="project-number">02</div><div><h3>High-Traffic Event Reliability</h3><p>Helped introduce Akamai technology for major event traffic at Rakuten. The work supported stable service during demand spikes and prevented event-related downtime and latency.</p><p class="project-tools">Rakuten · Application engineering · Traffic readiness</p></div><div class="project-result"><strong>99%+</strong><span>Uptime during major events</span></div></article>
-          <article class="project"><div class="project-number">03</div><div><h3>Chicago Divvy 2019 Data Story</h3><p>Analyzed the 2019 Divvy bike-share dataset and built a Tableau story to explore usage patterns and communicate findings through visual analysis.</p><p class="project-tools">General Assembly · Tableau · Data analysis</p></div><div class="project-result"><strong>Tableau</strong><span>Data visualization and project storytelling</span></div></article>
-          <article class="project"><div class="project-number">04</div><div><h3>Nonprofit Website Maintenance</h3><p>Volunteered to improve a nonprofit website’s layout, forms, and navigation. Documented updates with a changelog and a quality-check list.</p><p class="project-tools">Volunteer work · Lovable · Website QA</p></div><div class="project-result"><strong>Web</strong><span>Navigation, forms, layout, and quality checks</span></div></article>
-        </div>
-      </div>
+      <div class="wrap section-grid"><h2 class="section-title">Projects</h2><div class="section-content project-grid">
+        <article class="project-card"><div class="project-top"><div><span class="project-number">01 / AKAMAI</span><h3>Internal Test Application</h3></div><span class="skill-icon" aria-hidden="true">⌘</span></div><p>Built an internal tool that helped shorten onboarding time.</p><span class="project-tag">Workflow improvement</span></article>
+        <article class="project-card"><div class="project-top"><div><span class="project-number">02 / RAKUTEN</span><h3>High-Traffic Event Support</h3></div><span class="skill-icon" aria-hidden="true">↗</span></div><p>Helped prepare services for event traffic and avoid downtime and latency during demand spikes.</p><span class="project-tag">Service reliability</span></article>
+        <article class="project-card"><div class="project-top"><div><span class="project-number">03 / GENERAL ASSEMBLY</span><h3>Chicago Divvy Data Story</h3></div><span class="skill-icon" aria-hidden="true">▥</span></div><p>Explored 2019 bike-share patterns and presented findings in a Tableau story.</p><span class="project-tag">Data analysis · Tableau</span></article>
+        <article class="project-card"><div class="project-top"><div><span class="project-number">04 / VOLUNTEER</span><h3>Nonprofit Website</h3></div><span class="skill-icon" aria-hidden="true">✳</span></div><p>Updated layout, forms, and navigation, then documented changes and quality checks.</p><span class="project-tag">Web maintenance</span></article>
+      </div></div>
     </section>
-
     <section class="education" id="education">
-      <div class="wrap">
-        <div class="section-head"><div><div class="section-kicker">05 / Education</div><h2>Learning with purpose.</h2></div><p class="section-intro">Building on a technical career with structured training in data analysis and microelectronics.</p></div>
-        <div class="edu-grid reveal">
-          <article class="edu-card"><span>Completed · 2026</span><h3>Data Analyst Program</h3><p>General Assembly<br>Final project: Chicago Divvy 2019 Tableau story</p></article>
-          <article class="edu-card"><span>2026</span><h3>Microelectronics &amp; Nanomanufacturing</h3><p>Penn State CNEU certificate program<br>Cleanroom and semiconductor process training</p></article>
-          <article class="edu-card"><span>Bachelor’s Degree</span><h3>Economics</h3><p>Bachelor of Arts<br>Business and analytical foundation</p></article>
-        </div>
-      </div>
+      <div class="wrap section-grid"><h2 class="section-title light">Education &amp; Training</h2><div class="section-content edu-list">
+        <article class="edu-card"><span>Completed · 2026</span><h3>Data Analyst Program</h3><p>General Assembly<br>Final project: Chicago Divvy 2019</p></article>
+        <article class="edu-card"><span>2026</span><h3>Microelectronics &amp; Nanomanufacturing</h3><p>Penn State CNEU certificate program<br>Cleanroom and semiconductor process training</p></article>
+        <article class="edu-card"><span>Bachelor of Arts</span><h3>Economics</h3><p>Business and analytical foundation</p></article>
+      </div></div>
     </section>
-
     <section class="contact" id="contact">
-      <div class="wrap contact-grid"><div><div class="section-kicker">06 / Contact</div><h2>Let’s talk about the problem you’re solving.</h2><p class="contact-copy">For professional inquiries, connect with me on LinkedIn.</p></div><a class="button" href="https://www.linkedin.com/in/seana-kim/" target="_blank" rel="noreferrer">Connect on LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></div>
+      <div class="wrap section-grid"><h2 class="section-title">Contact</h2><div class="section-content contact-content"><p>Have a role or project in mind? Get in touch.</p><div class="contact-links"><a class="button" href="mailto:kim.sena33@yahoo.com">Email me <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://www.linkedin.com/in/seana-kim/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
     </section>
   </main>
-  <footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Sena Kim</span><span>Technical Support · Cloud Operations · Data Analysis</span></div></footer>
+  <footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Sena Kim</span><span>Cloud support · Software · Data</span></div></footer>
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
@@ -259,15 +215,6 @@
       toggle.setAttribute('aria-expanded', 'false');
     }));
     document.getElementById('year').textContent = new Date().getFullYear();
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
   </script>
 </body>
 </html>
