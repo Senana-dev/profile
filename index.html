@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="Sena Kim — technical support, cloud operations, application engineering, and data analysis portfolio.">
+  <title>Sena Kim | Technical Support &amp; Cloud Operations</title>
+  <style>
+    :root {
+      --paper: #f7f5f0;
+      --white: #fffefa;
+      --ink: #172c40;
+      --muted: #64717a;
+      --line: #dfe3df;
+      --coral: #db735b;
+      --sage: #dce7dd;
+      --blue: #e5edf1;
+      --lavender: #ece7f0;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgb(247 245 240 / 92%); backdrop-filter: blur(14px); border-bottom: 1px solid rgb(23 44 64 / 8%); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 750; letter-spacing: -.04em; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--white); background: var(--ink); font-family: var(--serif); font-size: 16px; font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: clamp(15px, 2.5vw, 30px); }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 650; letter-spacing: .04em; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--coral); }
+    .nav-toggle { display: none; border: 1px solid var(--line); background: var(--white); color: var(--ink); border-radius: 99px; padding: 9px 14px; font: inherit; font-size: 13px; }
+    .hero { padding: clamp(68px, 10vw, 128px) 0 96px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: clamp(48px, 9vw, 116px); align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--coral); font-size: 11px; font-weight: 750; text-transform: uppercase; letter-spacing: .16em; }
+    .eyebrow::before { content: ""; width: 27px; height: 1px; background: currentColor; }
+    h1 { margin: 22px 0 18px; max-width: 650px; font-family: var(--serif); font-size: clamp(48px, 7vw, 82px); line-height: .99; font-weight: 400; letter-spacing: -.055em; }
+    h1 em { color: var(--coral); font-weight: 400; }
+    .hero-copy { max-width: 570px; color: var(--muted); font-size: clamp(15px, 1.5vw, 18px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 19px; border: 1px solid var(--ink); border-radius: 3px; background: var(--ink); color: white; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .035em; transition: transform .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); background: #254662; }
+    .button.secondary { color: var(--ink); background: transparent; }
+    .button.secondary:hover { background: white; }
+    .arrow { font-size: 16px; line-height: 1; }
+    .hero-art { position: relative; min-height: 340px; display: grid; place-items: center; }
+    .orbit { position: absolute; border: 1px solid #cfd8d3; border-radius: 50%; transform: rotate(-18deg); }
+    .orbit.one { width: 340px; height: 235px; }
+    .orbit.two { width: 275px; height: 340px; transform: rotate(30deg); border-color: #e0c9bf; }
+    .orbit-dot { position: absolute; width: 13px; height: 13px; border-radius: 50%; background: var(--coral); top: 20%; right: 16%; box-shadow: 0 0 0 8px rgb(219 115 91 / 12%); }
+    .profile-card { position: relative; z-index: 1; width: min(300px, 80%); padding: 28px; background: var(--white); border: 1px solid #e9e5de; box-shadow: 0 24px 70px rgb(23 44 64 / 10%); transform: rotate(2deg); }
+    .profile-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+    .profile-label { color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .profile-status { display: flex; align-items: center; gap: 7px; color: #4f7459; font-size: 10px; font-weight: 700; }
+    .profile-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #6b9c72; }
+    .profile-name { margin: 20px 0 2px; font-family: var(--serif); font-size: 31px; letter-spacing: -.04em; }
+    .profile-role { color: var(--muted); font-size: 12px; }
+    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 25px; }
+    .mini-stat { padding: 12px; background: var(--paper); }
+    .mini-stat strong { display: block; font-family: var(--serif); font-size: 23px; font-weight: 400; line-height: 1.1; }
+    .mini-stat span { color: var(--muted); font-size: 9px; letter-spacing: .07em; text-transform: uppercase; }
+    .scroll-note { display: inline-flex; align-items: center; gap: 10px; margin-top: 42px; color: var(--muted); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    .scroll-note::before { content: "↓"; display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid var(--line); border-radius: 50%; color: var(--coral); font-size: 15px; }
+    section { padding: 88px 0; }
+    .section-head { display: grid; grid-template-columns: 1fr minmax(220px, 390px); gap: 32px; align-items: end; margin-bottom: 38px; }
+    .section-kicker { margin-bottom: 9px; color: var(--coral); font-size: 10px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin: 0; font-family: var(--serif); font-size: clamp(35px, 5vw, 54px); line-height: 1.05; font-weight: 400; letter-spacing: -.045em; }
+    .section-intro { margin: 0; color: var(--muted); font-size: 14px; }
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(44px, 9vw, 120px); align-items: start; }
+    .about-callout { padding: 27px; background: var(--sage); }
+    .about-callout p { margin: 0; font-family: var(--serif); font-size: clamp(23px, 3vw, 32px); line-height: 1.25; letter-spacing: -.025em; }
+    .about-callout small { display: block; margin-top: 24px; color: #53675b; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .about-body p { margin: 0 0 17px; color: var(--muted); font-size: 15px; }
+    .language-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .language-row span { padding: 7px 11px; border: 1px solid var(--line); border-radius: 99px; font-size: 10px; font-weight: 650; }
+    .skills { background: #eef1ee; }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .skill-card { min-height: 218px; padding: 23px; background: var(--white); border: 1px solid #e4e7e2; }
+    .skill-index { color: var(--coral); font-family: var(--serif); font-size: 17px; }
+    .skill-card h3 { margin: 27px 0 13px; font-family: var(--serif); font-size: 23px; font-weight: 400; letter-spacing: -.025em; }
+    .skill-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.85; }
+    .experience { background: var(--paper); }
+    .experience-grid { display: grid; grid-template-columns: .62fr 1.38fr; gap: clamp(44px, 9vw, 112px); }
+    .experience-aside { position: sticky; top: 116px; align-self: start; }
+    .experience-aside p { max-width: 280px; color: var(--muted); font-size: 14px; }
+    .timeline { border-top: 1px solid var(--line); }
+    .job { display: grid; grid-template-columns: 132px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+    .job-date { padding-top: 4px; color: var(--coral); font-size: 11px; font-weight: 750; letter-spacing: .05em; }
+    .job h3 { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 400; }
+    .job-company { margin: 2px 0 10px; color: var(--muted); font-size: 12px; }
+    .job p { margin: 0; color: var(--muted); font-size: 13px; }
+    .projects { color: white; background: var(--ink); }
+    .projects .section-kicker { color: #f0a28c; }
+    .projects .section-intro { color: #b9c5cd; }
+    .project-list { border-top: 1px solid rgb(255 255 255 / 22%); }
+    .project { display: grid; grid-template-columns: 64px minmax(0, 1fr) 250px; gap: 24px; align-items: start; padding: 30px 0; border-bottom: 1px solid rgb(255 255 255 / 22%); }
+    .project-number { color: #f0a28c; font-family: var(--serif); font-size: 20px; }
+    .project h3 { margin: 0 0 9px; font-family: var(--serif); font-size: clamp(23px, 3vw, 31px); font-weight: 400; letter-spacing: -.03em; }
+    .project p { max-width: 620px; margin: 0; color: #c2cdd3; font-size: 13px; }
+    .project-result { padding: 15px; border: 1px solid rgb(255 255 255 / 23%); }
+    .project-result strong { display: block; color: #f7b49f; font-family: var(--serif); font-size: 25px; font-weight: 400; }
+    .project-result span { color: #c2cdd3; font-size: 10px; line-height: 1.5; }
+    .project-tools { margin-top: 15px !important; color: #f0a28c !important; font-size: 10px !important; letter-spacing: .07em; text-transform: uppercase; }
+    .education { background: var(--white); }
+    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .edu-card { padding: 23px; border: 1px solid var(--line); }
+    .edu-card span { color: var(--coral); font-size: 10px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .edu-card h3 { margin: 24px 0 7px; font-family: var(--serif); font-size: 21px; font-weight: 400; }
+    .edu-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .contact { padding: 86px 0; background: var(--sage); }
+    .contact-grid { display: flex; justify-content: space-between; align-items: end; gap: 36px; }
+    .contact h2 { max-width: 580px; }
+    .contact-copy { margin: 15px 0 0; color: #586c60; font-size: 14px; }
+    footer { padding: 22px 0; background: var(--ink); color: #b9c5cd; font-size: 10px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 780px) {
+      .wrap { width: min(100% - 36px, 620px); }
+      .nav { min-height: 64px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: 63px; left: 0; right: 0; padding: 16px 20px 20px; background: var(--paper); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 5px 0; }
+      .hero { padding: 62px 0 70px; }
+      .hero-grid, .about-grid, .experience-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 36px; }
+      .hero-art { min-height: 300px; }
+      .orbit.one { width: 300px; height: 210px; }
+      .orbit.two { width: 250px; height: 300px; }
+      section { padding: 68px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 14px; }
+      .skill-grid, .edu-grid { grid-template-columns: 1fr 1fr; }
+      .experience-aside { position: static; }
+      .project { grid-template-columns: 38px 1fr; }
+      .project-result { grid-column: 2; }
+      .contact-grid { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 520px) {
+      .skill-grid, .edu-grid { grid-template-columns: 1fr; }
+      .job { grid-template-columns: 1fr; gap: 7px; }
+      .project { gap: 10px; }
+      .project-result { grid-column: 2; }
+      .footer-row { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Sena Kim home"><span class="brand-mark">SK</span><span>Sena Kim</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#experience">EXPERIENCE</a><a href="#projects">PROJECTS</a><a href="#education">EDUCATION</a><a href="#contact">CONTACT</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Technical Support · Cloud Operations</div>
+          <h1>Making complex<br>technology feel <em>clear.</em></h1>
+          <p class="hero-copy">I’m Sena Kim, a technical support and application engineering professional with 12 years of experience helping teams troubleshoot systems, improve service reliability, and make work easier to repeat.</p>
+          <div class="hero-actions">
+            <a class="button" href="#projects">Explore selected work <span class="arrow" aria-hidden="true">↘</span></a>
+            <a class="button secondary" href="https://www.linkedin.com/in/seana-kim/" target="_blank" rel="noreferrer">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <a class="scroll-note" href="#about">A little more about my work</a>
+        </div>
+        <div class="hero-art" aria-label="Profile overview">
+          <div class="orbit one"></div><div class="orbit two"></div><div class="orbit-dot"></div>
+          <div class="profile-card">
+            <div class="profile-top"><span class="profile-label">Professional snapshot</span><span class="profile-status">Open to opportunities</span></div>
+            <div class="profile-name">Sena Kim</div>
+            <div class="profile-role">Cloud Support · Systems · Applications</div>
+            <div class="mini-stats"><div class="mini-stat"><strong>12</strong><span>Years in technology</span></div><div class="mini-stat"><strong>3</strong><span>Languages</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-kicker">01 / About</div><h2>Support that connects<br>the details.</h2></div><p class="section-intro">From application behavior to infrastructure changes, I look for the evidence that explains what is happening and communicate the next step clearly.</p></div>
+        <div class="about-grid reveal">
+          <div class="about-callout"><p>“I take ownership of a problem, follow it through, and keep the right people informed.”</p><small>How I work</small></div>
+          <div class="about-body"><p>My background spans web development, systems engineering, application engineering, and enterprise cloud support. At Akamai, I worked with customers and internal teams to investigate service issues, analyze logs, and restore reliable operation.</p><p>I also enjoy improving everyday workflows: I built an internal test application that helped shorten onboarding time, and I have continued to develop my data analysis skills through a formal program and project work.</p><p>Having lived and worked in Japan for more than a decade, I’m comfortable collaborating across Japanese and U.S. teams and communicating in English, Japanese, and Korean.</p><div class="language-row" aria-label="Languages"><span>English</span><span>日本語</span><span>한국어</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-kicker">02 / Skills</div><h2>Tools I use to<br>solve problems.</h2></div><p class="section-intro">A practical mix of customer-facing support, technical investigation, and data storytelling.</p></div>
+        <div class="skill-grid reveal">
+          <article class="skill-card"><span class="skill-index">01</span><h3>Cloud &amp; Technical Support</h3><p>Enterprise cloud support · Incident troubleshooting · Splunk log analysis · AWS EC2 operations (basic) · Docker test environments · Customer communication</p></article>
+          <article class="skill-card"><span class="skill-index">02</span><h3>Systems &amp; Applications</h3><p>Linux / CLI · Java · PHP · APIs · SQL · MySQL / Oracle · Microsoft 365 · Active Directory troubleshooting</p></article>
+          <article class="skill-card"><span class="skill-index">03</span><h3>Data &amp; Reporting</h3><p>Excel · Tableau · PostgreSQL / pgAdmin · Data cleaning · Exploratory analysis · Dashboard storytelling</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="wrap experience-grid">
+        <div class="experience-aside"><div class="section-kicker">03 / Experience</div><h2>Where I’ve<br>made an impact.</h2><p>Progressive experience across software, systems, applications, and cloud support.</p></div>
+        <div class="timeline reveal">
+          <article class="job"><div class="job-date">2019 — 2025</div><div><h3>Cloud Support Engineer</h3><div class="job-company">Akamai</div><p>Supported enterprise cloud services, investigated technical issues with customers and internal teams, analyzed logs with Splunk, and improved onboarding through an internal test application.</p></div></article>
+          <article class="job"><div class="job-date">2017 — 2019</div><div><h3>Application Engineer</h3><div class="job-company">Rakuten</div><p>Supported application services and applied Akamai technology for high-traffic events, helping maintain reliable customer experiences during demand spikes.</p></div></article>
+          <article class="job"><div class="job-date">2014 — 2017</div><div><h3>System Engineer</h3><div class="job-company">Cross Alliance</div><p>Worked on system operations and developed a shift management program later adopted by Recruit and MUJI.</p></div></article>
+          <article class="job"><div class="job-date">2012 — 2013</div><div><h3>Web Developer</h3><div class="job-company">Shinhwa</div><p>Built and maintained web application features using Java and related web technologies.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-kicker">04 / Selected Work</div><h2>Evidence in the work.</h2></div><p class="section-intro">A few examples of how I troubleshoot, improve workflows, and turn data into a clear story.</p></div>
+        <div class="project-list reveal">
+          <article class="project"><div class="project-number">01</div><div><h3>Internal Test Application</h3><p>Built an internal test application that helped shorten onboarding time.</p><p class="project-tools">Akamai · Internal tool · Workflow improvement</p></div><div class="project-result"><strong>Shortened</strong><span>Onboarding time</span></div></article>
+          <article class="project"><div class="project-number">02</div><div><h3>High-Traffic Event Reliability</h3><p>Helped introduce Akamai technology for major event traffic at Rakuten. The work supported stable service during demand spikes and prevented event-related downtime and latency.</p><p class="project-tools">Rakuten · Application engineering · Traffic readiness</p></div><div class="project-result"><strong>99%+</strong><span>Uptime during major events</span></div></article>
+          <article class="project"><div class="project-number">03</div><div><h3>Chicago Divvy 2019 Data Story</h3><p>Analyzed the 2019 Divvy bike-share dataset and built a Tableau story to explore usage patterns and communicate findings through visual analysis.</p><p class="project-tools">General Assembly · Tableau · Data analysis</p></div><div class="project-result"><strong>Tableau</strong><span>Data visualization and project storytelling</span></div></article>
+          <article class="project"><div class="project-number">04</div><div><h3>Nonprofit Website Maintenance</h3><p>Volunteered to improve a nonprofit website’s layout, forms, and navigation. Documented updates with a changelog and a quality-check list.</p><p class="project-tools">Volunteer work · Lovable · Website QA</p></div><div class="project-result"><strong>Web</strong><span>Navigation, forms, layout, and quality checks</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="education">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-kicker">05 / Education</div><h2>Learning with purpose.</h2></div><p class="section-intro">Building on a technical career with structured training in data analysis and microelectronics.</p></div>
+        <div class="edu-grid reveal">
+          <article class="edu-card"><span>Completed · 2026</span><h3>Data Analyst Program</h3><p>General Assembly<br>Final project: Chicago Divvy 2019 Tableau story</p></article>
+          <article class="edu-card"><span>2026</span><h3>Microelectronics &amp; Nanomanufacturing</h3><p>Penn State CNEU certificate program<br>Cleanroom and semiconductor process training</p></article>
+          <article class="edu-card"><span>Bachelor’s Degree</span><h3>Economics</h3><p>Bachelor of Arts<br>Business and analytical foundation</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid"><div><div class="section-kicker">06 / Contact</div><h2>Let’s talk about the problem you’re solving.</h2><p class="contact-copy">For professional inquiries, connect with me on LinkedIn.</p></div><a class="button" href="https://www.linkedin.com/in/seana-kim/" target="_blank" rel="noreferrer">Connect on LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Sena Kim</span><span>Technical Support · Cloud Operations · Data Analysis</span></div></footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
